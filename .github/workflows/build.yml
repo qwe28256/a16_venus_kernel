@@ -12,19 +12,19 @@ jobs:
       contents: read
 
     steps:
-      - name: Build Kernel
-        uses: dabao1955/kernel_build_action@main
+      - name: Build Kernel Any
+        uses: qwe28256/a16_venus_kernel@main
         with:
-          kernel-url: https://github.com/AcmeUI-Devices/android_kernel_xiaomi_cas
-          kernel-dir: msm-4.19
-          kernel-branch: taffy
-          config: cas_defconfig
+          kernel-url: https://github.com/xiaomi-lisa-devs/android_kernel_qcom_sm8350
+          kernel-dir: msm-5.xx
+          kernel-branch: lineage-23.0
+          config: vendor/venus_QGKI.config
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
-          ksu: true
+          ksu: false
           ksu-version: main
-          android-version: 12
-          aosp-clang-version: r383902
+          android-version: 16
+          aosp-clang-version: r547379
           disable-lto: true
           anykernel3: true
